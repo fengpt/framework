@@ -47,6 +47,8 @@ public class ResponseData<T> {
         return new ResponseData<>(false, code, message);
     }
     
+    
+    
     public static ResponseData<?> badRequest() {
         return new ResponseData<>(false, CommonEnum.SYS_ERROR.getCode(), CommonEnum.SYS_ERROR.getMessage());
     }
