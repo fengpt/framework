@@ -1,0 +1,55 @@
+
+server:
+  port: 8080
+  tomcat:
+      uri-encoding: UTF-8
+
+spring:
+  application:
+    name: sample-server
+#  profiles:
+#    active: ${env}
+  aop:
+      proxy-target-class: true
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+  mvc:
+    favicon:
+      enabled: false
+  datasource:
+    url: jdbc:mysql://106.13.123.121:3306/leading_sample?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: fengpt
+    driver-class-name: com.mysql.jdbc.Driver
+    test-on-borrow: true
+    validation-query: SELECT 1
+    jmx-enabled: true
+
+#以下配置不要在线上开启或者修改级别
+logging:
+  level:
+    org.springframework: DEBUG
+    org.springframework.scheduling: INFO
+
+# mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+      map-underscore-to-camel-case: true  #加了这个配置之后就可以直接把下划线分隔的库表字段自动转换为camel格式，不再需要ResultMap
+
+#开启jolokia
+endpoints:
+  jolokia:
+    enabled: true
+
+
+management:
+  security:
+    enabled: false
+#不检查中间件的连接状态，只检查服务本身的状态
+  health:
+    defaults:
+      enabled: false
