@@ -50,13 +50,9 @@ public class ResponseData<T> {
     
     
     public static ResponseData<?> badRequest() {
+    	
+    	
+    	System.out.println();
         return new ResponseData<>(false, CommonEnum.SYS_ERROR.getCode(), CommonEnum.SYS_ERROR.getMessage());
     }
-    
-    
-    
-    
-    public static void main(String[] args) {
-		
-	}
 }
