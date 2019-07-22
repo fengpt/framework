@@ -14,6 +14,10 @@ public class BrowerSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()        // 定义哪些URL需要被保护、哪些不需要被保护
                 .anyRequest()               // 任何请求,登录后可以访问
                 .authenticated();
+        
+        
+        
+        
     }
 }
 
