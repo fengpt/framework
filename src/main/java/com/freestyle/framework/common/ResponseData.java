@@ -53,10 +53,5 @@ public class ResponseData<T> {
         return new ResponseData<>(false, CommonEnum.SYS_ERROR.getCode(), CommonEnum.SYS_ERROR.getMessage());
     }
     
-    
-    
-    
-    public static void main(String[] args) {
-		
-	}
+
 }
